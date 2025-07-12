@@ -1,0 +1,213 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   /*----------Header----------------------*/
+   .container-fluid {
+       margin-top: -70px;
+       margin-bottom: -70px;
+   }
+
+   .navbar {
+       background: white !important;
+       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+       padding: 15px 0;
+   }
+
+   .navbar-brand img {
+       margin-left: 120px;
+       height: 250px;
+       width: auto;
+
+   }
+
+   .nav-link i {
+       margin: 5px;
+       ;
+   }
+
+   .nav-link {
+       color: #0d7377 !important;
+       font-size: 20px !important;
+       font-family: Roboto !important;
+       font-weight: 600 !important;
+       padding: 13px 20px;
+       margin: 10px !important;
+       transition: all 0.3s ease;
+       position: relative;
+       text-decoration: none;
+   }
+
+   .nav-link::after {
+       content: '';
+       position: absolute;
+       bottom: 0;
+       left: 50%;
+       width: 0;
+       height: 3px;
+       background: #0d7377 !important;
+       transition: all 0.3s ease;
+       transform: translateX(-50%);
+       border-radius: 2px;
+   }
+
+   .nav-link:hover {
+       color: #0d7377 !important;
+   }
+
+   .nav-link:hover::after {
+       width: 80%;
+   }
+
+   .btn-primary {
+       background: #0d7377 !important;
+       border: none;
+       padding: 12px 24px !important;
+       margin-right: 120px !important;
+       border-radius: 20px !important;
+       font-size: 20px !important;
+       font-weight: 600;
+       transition: all 0.3s ease;
+   }
+
+   .btn-primary:hover {
+       background: #14a085 !important;
+       transform: translateY(-2px);
+   }
+
+   /* Estilos para o menu mobile */
+   .mobile-menu-overlay {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: rgba(0, 0, 0, 0.5);
+       z-index: 9998;
+       opacity: 0;
+       visibility: hidden;
+       transition: all 0.3s ease;
+   }
+
+   .mobile-menu-overlay.active {
+       opacity: 1;
+       visibility: visible;
+   }
+
+   .mobile-menu {
+       position: fixed;
+       top: 0;
+       right: -100%;
+       width: 350px;
+       height: 100vh;
+       background: white;
+       z-index: 9999;
+       transition: all 0.4s ease;
+       box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+       overflow-y: auto;
+   }
+
+   .mobile-menu.active {
+       right: 0;
+   }
+
+   .mobile-menu-header {
+       padding: 20px;
+       background: #0d7377;
+       color: white;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .mobile-menu-header h4 {
+       margin: 0;
+       font-family: Roboto;
+       font-weight: 600;
+   }
+
+   .mobile-menu-close {
+       background: none;
+       border: none;
+       color: white;
+       font-size: 24px;
+       cursor: pointer;
+       padding: 0;
+       width: 30px;
+       height: 30px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .mobile-menu-content {
+       padding: 20px;
+   }
+
+   .mobile-nav-link {
+       display: block;
+       padding: 15px 0;
+       color: #0d7377;
+       text-decoration: none;
+       font-size: 18px;
+       font-weight: 600;
+       font-family: Roboto;
+       border-bottom: 1px solid #eee;
+       transition: all 0.3s ease;
+   }
+
+   .mobile-nav-link:hover {
+       color: #14a085;
+       padding-left: 10px;
+   }
+
+   .mobile-nav-link:last-child {
+       border-bottom: none;
+   }
+
+   .mobile-cta-button {
+       background: #0d7377;
+       color: white;
+       border: none;
+       padding: 15px 30px;
+       border-radius: 25px;
+       font-size: 18px;
+       font-weight: 600;
+       width: 100%;
+       margin-top: 20px;
+       transition: all 0.3s ease;
+   }
+
+
+
+   @media (max-width: 768px) {
+
+       /*--------header-----------------*/
+       .navbar-brand img {
+           height: 180px !important;
+           margin-left: 20px;
+       }
+
+
+
+       .navbar-toggler {
+           border: 2px solid #0d7377 !important;
+           border-radius: 10px !important;
+       }
+
+       .mobile-menu {
+           width: 100%;
+           max-width: 350px;
+       }
+
+       /* Esconder o menu desktop no mobile */
+       .navbar-collapse.collapse {
+           display: none !important;
+       }
+
+       .btn-primary {
+           margin-right: 20px !important;
+       }
+   }
