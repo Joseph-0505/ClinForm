@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="/clinform/sistema-anamnese/clinform/public/css/style.css">
     <link rel="stylesheet" href="/clinform/sistema-anamnese/clinform/public/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/global.css">
+
+    <?php
+    if (isset($cssPage)) {
+        if (is_array($cssPage)) {
+            foreach ($cssPage as $css) {
+                echo '<link rel="stylesheet" href="' . BASE_URL . 'css/' . $css . '">' . PHP_EOL;
+            }
+        } else {
+            echo '<link rel="stylesheet" href="' . BASE_URL . 'css/' . $cssPage . '">' . PHP_EOL;
+        }
+    }
+    ?>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +30,7 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../includes/home.php">
+            <a class="navbar-brand" href="<?= BASE_URL ?>home">
                 <img src="/clinform/sistema-anamnese/clinform/public/images/logo.png" alt="clinform">
             </a>
             <!-- Botão toggler modificado para abrir menu lateral -->
@@ -27,8 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
                     <li class="nav-item">
-                        <a class="nav-link" href="../includes/home.php"><i class="fas fa-home"></i>Home</a>
-
+                        <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../views/includes/sobre.php"><i class="fas fa-info-circle"></i>Sobre</a>
@@ -56,59 +68,9 @@
             </button>
         </div>
         <div class="mobile-menu-content">
-            <a href="home.php" class="mobile-nav-link"><i class="fas fa-home"></i>Home</a>
+            <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i>Home</a>
             <a href="sobre.php" class="mobile-nav-link"><i class="fas fa-info-circle"></i>Sobre</a>
             <a href="contato.php" class="mobile-nav-link"><i class="fas fa-envelope"></i>Contato</a>
             <button class="mobile-cta-button">Façe seu orçamento</button>
         </div>
 </header>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Elementos do menu mobile
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileMenuClose = document.getElementById('mobileMenuClose');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-    // Função para abrir o menu
-    function openMobileMenu() {
-        mobileMenu.classList.add('active');
-        mobileMenuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Impede o scroll da página
-    }
-
-    // Função para fechar o menu
-    function closeMobileMenu() {
-        mobileMenu.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restaura o scroll da página
-    }
-
-    // Event listeners
-    mobileMenuToggle.addEventListener('click', openMobileMenu);
-    mobileMenuClose.addEventListener('click', closeMobileMenu);
-    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-
-    // Fechar menu ao clicar em um link
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-
-    // Fechar menu com a tecla ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-
-    // Prevenir scroll no overlay
-    mobileMenuOverlay.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-    }, {
-        passive: false
-    });
-</script>
-
-</html>
