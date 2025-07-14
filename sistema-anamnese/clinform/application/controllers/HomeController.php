@@ -13,7 +13,9 @@ class HomeController
         $viewPath = dirname(__DIR__) . '/views';
         $cssPage = [
             'header/style.css',
-            'home/style.css'
+            'home/style.css',
+            'footer/style.css'
+
         ];
 
         include $viewPath . '/includes/header.php';

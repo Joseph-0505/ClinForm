@@ -1,3 +1,11 @@
+<footer>
+    <div class="footer-container">
+        <hr style="margin: 2rem 0; border-color: #c8d1e1ff;">
+        <p>&copy; 2025 ClinForm. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= BASE_URL ?>js/main.js"></script>
 
@@ -48,8 +56,5 @@
         passive: false
     });
 </script>
-<!------------------------------------- Pagina HOME ---------------------------------->
-
-
 
 </html>

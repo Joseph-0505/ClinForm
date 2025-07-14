@@ -837,7 +837,32 @@ i.far.fa-calendar-times {
     }
 
 
+
+    .celular-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .phone-image {
+        max-width: 80%;
+    }
+
+    .benefits-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefit-card {
+        height: 250px;
+    }
+
+    .page-celular h1 {
+        font-size: 2rem;
+    }
+
     .page-celular p {
         font-size: 18px;
     }
+
 }
