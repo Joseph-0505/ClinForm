@@ -1,5 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= BASE_URL ?>js/main.js"></script>
+
+<!------------------------------------ HEADER --------------------------------------------------->
 <script>
     // Elementos do menu mobile
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -46,5 +48,8 @@
         passive: false
     });
 </script>
+<!------------------------------------- Pagina HOME ---------------------------------->
+
+
 
 </html>
