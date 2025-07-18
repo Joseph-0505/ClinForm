@@ -56,5 +56,74 @@
         passive: false
     });
 </script>
+<script>
+    // Animação dinâmica das barras de progresso
+    document.addEventListener('DOMContentLoaded', function() {
+        const progressBars = document.querySelectorAll('.mockup-progress-fill');
+
+        function animateProgress() {
+            progressBars.forEach((bar, index) => {
+                const baseWidths = [85, 72, 93];
+                const variation = (Math.random() - 0.5) * 10;
+                const newWidth = Math.max(50, Math.min(100, baseWidths[index] + variation));
+
+                setTimeout(() => {
+                    bar.style.width = newWidth + '%';
+                }, index * 200);
+            });
+        }
+
+        setInterval(animateProgress, 4000);
+    });
+
+    // Efeito 3D interativo no mockup
+    const mockupContainer = document.querySelector('.mockup-container');
+    const mockup = document.querySelector('.mockup');
+
+    mockup.addEventListener('mousemove', function(e) {
+        const rect = mockup.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
+
+        mockupContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    mockup.addEventListener('mouseleave', function() {
+        mockupContainer.style.transform = 'perspective(1000px) rotateY(-15deg) rotateX(5deg)';
+    });
+
+    // Animação de tabs
+    const tabs = document.querySelectorAll('.mockup-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // CTAs com feedback visual
+    const buttons = document.querySelectorAll('.cta-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Feedback visual
+            const original = this.innerHTML;
+            this.innerHTML = '✓ Redirecionando...';
+            this.style.opacity = '0.8';
+
+            setTimeout(() => {
+                this.innerHTML = original;
+                this.style.opacity = '1';
+            }, 1500);
+        });
+    });
+</script>
 
 </html>
