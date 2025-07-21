@@ -1409,4 +1409,8 @@ h3 {
         justify-content: center;
         margin: 1.5rem auto 0;
     }
+
+    .cta-buttom {
+        margin-left: 100px;
+    }
 }

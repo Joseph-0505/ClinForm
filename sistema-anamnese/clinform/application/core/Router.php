@@ -24,6 +24,6 @@ class Router
             }
         }
 
-        echo "Página não encontrada.";
+        include __DIR__ . "/../views/includes/erro404.php";
     }
 }

@@ -16,6 +16,8 @@ class HomeController
             'home/style.css',
             'footer/style.css'
 
+
+
         ];
 
         include $viewPath . '/includes/header.php';
