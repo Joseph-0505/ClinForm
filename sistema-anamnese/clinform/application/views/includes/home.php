@@ -2,7 +2,11 @@
      <div class="content-left">
          <h1 class="main-title">Simplifique suas fichas de anamnese</h1>
          <p class="subtitle">Gerencie as informações dos seus pacientes de forma fácil e eficiente com nosso sistema online.</p>
-         <a href="<?= BASE_URL ?>contato" class="btn-primary">Comece agora</a>
+         <a href="<?= BASE_URL ?>contato" class="btn-primary">Comece agora
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+             </svg>
+         </a>
      </div>
      <div class="content-right">
          <div class="mockup-background"></div>
@@ -87,7 +91,11 @@
          </p>
      </div>
  </div>
- <a href="<?= BASE_URL ?>contato" class="btn-card">Quero conhecer</a>
+ <a href="<?= BASE_URL ?>contato" class="btn-card">Quero conhecer
+     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+     </svg>
+ </a>
 
  <!--------------------------------Parte do Celular e cards ----------------------------------->
  <div class="container">
@@ -220,13 +228,15 @@
                  </div>
              </div>
 
-             <div class="cta-buttons">
-                 <button class="cta-button">
-                     Começar teste grátis
-                     <span>→</span>
-                 </button>
-             </div>
+
+             <a href="<?= BASE_URL ?>contato" class="cta-button">
+                 Começar agora
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                 </svg>
+             </a>
          </div>
+
 
          <div class="hero-visual">
              <div class="mockup-container">
@@ -302,4 +312,34 @@
              </div>
          </div>
      </div>
+ </div>
+
+ <div class="cta-container">
+
+     <h2 class="cta-title">Pronto para revolucionar suas consultas?</h2>
+
+     <p class="cta-subtitle">
+         Junte-se a centenas de profissionais que já economizam tempo e melhoram a qualidade do atendimento com nossa plataforma.
+     </p>
+     <div class="stats-row">
+         <div class="stat-item">
+             <div class="stat-number">500+</div>
+             <div class="stat-label">Profissionais</div>
+         </div>
+         <div class="stat-item">
+             <div class="stat-number">15min</div>
+             <div class="stat-label">Economia por consulta</div>
+         </div>
+         <div class="stat-item">
+             <div class="stat-number">4.9★</div>
+             <div class="stat-label">Avaliação média</div>
+         </div>
+     </div>
+     <a href="<?= BASE_URL ?>contato" class="cta-buttom">
+         Começar agora
+         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </svg>
+     </a>
+
  </div>

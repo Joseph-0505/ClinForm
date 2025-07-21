@@ -106,24 +106,6 @@
             this.classList.add('active');
         });
     });
-
-    // CTAs com feedback visual
-    const buttons = document.querySelectorAll('.cta-button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Feedback visual
-            const original = this.innerHTML;
-            this.innerHTML = '✓ Redirecionando...';
-            this.style.opacity = '0.8';
-
-            setTimeout(() => {
-                this.innerHTML = original;
-                this.style.opacity = '1';
-            }, 1500);
-        });
-    });
 </script>
 
 </html>
