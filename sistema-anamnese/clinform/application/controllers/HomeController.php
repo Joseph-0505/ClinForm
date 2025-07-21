@@ -14,7 +14,7 @@ class HomeController
         $cssPage = [
             'header/style.css',
             'home/style.css',
-            'footer/style.css'
+            'footer/style.css',
 
 
 

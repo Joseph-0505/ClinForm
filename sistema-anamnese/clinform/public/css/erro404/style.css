@@ -1,6 +1,6 @@
 .error-container {
-    max-width: 1200px;
     margin: 0 auto;
+    margin-top: 50px;
     padding: 40px 20px;
     text-align: center;
     position: relative;
@@ -12,7 +12,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -24,6 +23,7 @@
 .error-image img {
     width: 100%;
     max-width: 500px;
+    border-radius: 50px;
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
 }
@@ -42,13 +42,13 @@
 
 .error-text {
     text-align: left;
-    color: white;
+    color: #0d7377 !important;
 }
 
 .error-code {
     font-size: 8rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.2);
+    color: #0d7377;
     line-height: 0.8;
     margin-bottom: 20px;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -57,14 +57,14 @@
 .error-title {
     font-size: 3rem;
     font-weight: 700;
-    color: white;
+    color: #0d7377;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .error-subtitle {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #0d7377;
     margin-bottom: 40px;
     line-height: 1.5;
 }
@@ -80,7 +80,7 @@
     align-items: center;
     gap: 12px;
     background: white;
-    color: #667eea;
+    color: #0d7377;
     padding: 16px 32px;
     border: none;
     border-radius: 50px;
@@ -102,16 +102,16 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: white;
+    color: #0d7377;
     padding: 16px 32px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: none;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
@@ -124,7 +124,8 @@
 .help-section {
     margin-top: 60px;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    background: #f8f9ff;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -133,7 +134,7 @@
 .help-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: #0d7377;
     margin-bottom: 30px;
 }
 
@@ -145,13 +146,13 @@
 
 .help-item {
     text-align: center;
-    color: rgba(255, 255, 255, 0.9);
+    color: #0d7377 !important;
 }
 
 .help-icon {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #0d7377;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -163,13 +164,15 @@
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 10px;
-    color: white;
+    color: #0d7377 !important;
 }
 
 .help-item p {
     font-size: 0.95rem;
     line-height: 1.4;
 }
+
+
 
 @media (max-width: 768px) {
     .error-content {
@@ -215,5 +218,50 @@
     .help-grid {
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-elements::before,
+.floating-elements::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: floatAround 15s infinite linear;
+}
+
+.floating-elements::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-elements::after {
+    top: 70%;
+    right: 10%;
+    animation-delay: 7s;
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(360deg);
     }
 }
