@@ -4,22 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/clinform/sistema-anamnese/clinform/public/css/style.css">
-    <link rel="stylesheet" href="/clinform/sistema-anamnese/clinform/public/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>css/global.css">
 
     <?php
-    if (isset($cssPage)) {
-        if (is_array($cssPage)) {
-            foreach ($cssPage as $css) {
-                echo '<link rel="stylesheet" href="' . BASE_URL . 'css/' . $css . '">' . PHP_EOL;
-            }
-        } else {
-            echo '<link rel="stylesheet" href="' . BASE_URL . 'css/' . $cssPage . '">' . PHP_EOL;
-        }
+    foreach ((array)($GLOBALS['cssPage'] ?? []) as $css) {
+        echo '<link rel="stylesheet" href="' . BASE_URL . 'css/' . $css . '">' . PHP_EOL;
     }
     ?>
+
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +26,8 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?= BASE_URL ?>home">
-                <img src="/clinform/sistema-anamnese/clinform/public/images/logo.png" alt="clinform">
+                <img src="<?= BASE_URL ?>images/logo.png" alt="clinform">
+
             </a>
             <!-- Botão toggler modificado para abrir menu lateral -->
             <button class="navbar-toggler d-lg-none" type="button" id="mobileMenuToggle" aria-label="Toggle navigation">
@@ -43,10 +39,10 @@
                         <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../views/includes/sobre.php"><i class="fas fa-info-circle"></i>Sobre</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>sobre"><i class="fas fa-info-circle"></i>Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.php"><i class="fas fa-envelope"></i>Contato</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>contato"><i class="fas fa-envelope"></i>Contato</a>
                     </li>
                 </ul>
                 <div class="d-flex">
