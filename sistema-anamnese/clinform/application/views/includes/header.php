@@ -46,7 +46,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <button class="btn btn-primary">Façe seu orçamento</button>
+                    <button class="btn btn-primary">Entre no sistema<i aria-hidden="true" class="fas fa-sign-in-alt"></i></button>
                 </div>
             </div>
         </div>

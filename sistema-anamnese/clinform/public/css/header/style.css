@@ -180,6 +180,12 @@
        transition: all 0.3s ease;
    }
 
+   button {
+       i {
+           margin-left: 10px;
+       }
+   }
+
 
    @media (max-width: 768px) {
 

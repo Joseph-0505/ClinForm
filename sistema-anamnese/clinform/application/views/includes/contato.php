@@ -9,260 +9,340 @@
 </head>
 
 <div class="contato-container">
-    <div class="header">
-        <h1>Entre em Contato</h1>
-        <p>Preencha o formulário e fale conosco via WhatsApp</p>
+    <!-- Seção de Informações -->
+    <div class="info-section">
+        <h1 class="main-title">Entre em contato conosco</h1>
+
+        <p class="subtitle">
+            <strong>Envie um e-mail, faça uma ligação ou preencha o formulário,</strong>
+            e um membro da nossa equipe entrará em contato com você o mais breve possível.
+        </p>
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+                <span class="contact-label">WhatsApp Comercial:</span>
+                <span class="contact-value">
+                    <a href="https://wa.me/5541987714503" target="_blank">(41) 98771-4503</a>
+                </span>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-label">E-mail:</span>
+                <span class="contact-value">
+                    <a href="mailto:suporte@egssistemas.com">suporte@egssistemas.com</a>
+                </span>
+            </div>
+        </div>
     </div>
 
-    <form id="contactForm">
-        <div class="form-group">
-            <label for="nome">Nome Completo <span class="required">*</span></label>
-            <input type="text" id="nome" name="nome" required>
-            <div class="success-icon">✓</div>
-            <div class="error-icon">✕</div>
-            <div class="error-message"></div>
+    <!-- Seção do Formulário -->
+    <div class="form-section">
+        <div class="form-header">
+            <h2 class="form-title">No que podemos <span class="highlight">ajudar?</span></h2>
+            <p class="form-subtitle">
+                Preencha as informações abaixo.<br>
+                Em breve, entraremos em contato.
+            </p>
         </div>
 
-        <div class="form-group">
-            <label for="email">E-mail <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required>
-            <div class="success-icon">✓</div>
-            <div class="error-icon">✕</div>
-            <div class="error-message"></div>
-        </div>
+        <div id="messageContainer"></div>
 
-        <div class="form-group">
-            <label for="telefone">Telefone/WhatsApp <span class="required">*</span></label>
-            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
-            <div class="success-icon">✓</div>
-            <div class="error-icon">✕</div>
-            <div class="error-message"></div>
-        </div>
+        <form id="contactForm" action="/clinform/enviar-email.php" method="POST" novalidate>
+            <div class="form-group">
+                <label for="nome"><span class="required"></span></label>
+                <input type="text" name="nome" placeholder="Nome" id="nome" required>
+                <div class="error-message" id="nomeError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="assunto">Assunto</label>
-            <select id="assunto" name="assunto">
-                <option value="">Selecione um assunto</option>
-                <option value="Informações Gerais">Informações Gerais</option>
-                <option value="Suporte">Suporte</option>
-                <option value="Orçamento">Orçamento</option>
-                <option value="Reclamação">Reclamação</option>
-                <option value="Sugestão">Sugestão</option>
-                <option value="Outro">Outro</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="empresa"> <span class="required"></span></label>
+                <input type="text" name="empresa" placeholder="Empresa" id="empresa" required>
+                <div class="error-message" id="empresaError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="mensagem">Mensagem <span class="required">*</span></label>
-            <textarea id="mensagem" name="mensagem" placeholder="Descreva sua mensagem aqui..." required></textarea>
-            <div class="success-icon">✓</div>
-            <div class="error-icon">✕</div>
-            <div class="error-message"></div>
-        </div>
+            <div class="form-group">
+                <label for="telefone"> <span class="required"></span></label>
+                <div class="phone-input">
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" placeholder="(00) 00000-0000" required>
+                </div>
+                <div class="error-message" id="telefoneError"></div>
+            </div>
 
-        <button type="submit" class="submit-btn">
-            <svg class="whatsapp-icon" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-            </svg>
-            <span class="btn-text">Enviar via WhatsApp</span>
-            <div class="loading"></div>
-        </button>
-    </form>
+            <div class="form-group">
+                <label for="email"> <span class="required"></span></label>
+                <input type="email" name="email" placeholder="Email" id="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="assunto"> <span class="required"></span></label>
+                <input type="text" name="assunto" placeholder="Assunto" id="assunto" required>
+                <div class="error-message" id="assuntoError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem"><span class="required"></span></label>
+                <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                <div class="error-message" id="mensagemError"></div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Enviar</span>
+                <div class="loading"></div>
+            </button>
+        </form>
+    </div>
 </div>
 
 <script>
-    // Funções de validação
-    const validators = {
-        nome: (value) => {
-            if (!value.trim()) return 'Nome é obrigatório';
-            if (value.trim().length < 2) return 'Nome deve ter pelo menos 2 caracteres';
-            if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(value)) return 'Nome deve conter apenas letras';
-            return null;
-        },
+    class ContactFormValidator {
+        constructor() {
+            this.form = document.getElementById('contactForm');
+            this.submitBtn = document.getElementById('submitBtn');
+            this.messageContainer = document.getElementById('messageContainer');
 
-        email: (value) => {
-            if (!value.trim()) return 'E-mail é obrigatório';
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) return 'E-mail inválido';
-            return null;
-        },
+            this.fields = {
+                nome: {
+                    element: document.getElementById('nome'),
+                    errorElement: document.getElementById('nomeError'),
+                    validators: ['required', 'minLength', 'nameFormat']
+                },
+                empresa: {
+                    element: document.getElementById('empresa'),
+                    errorElement: document.getElementById('empresaError'),
+                    validators: ['required', 'maxLength']
+                },
+                telefone: {
+                    element: document.getElementById('telefone'),
+                    errorElement: document.getElementById('telefoneError'),
+                    validators: ['required', 'phone']
+                },
+                email: {
+                    element: document.getElementById('email'),
+                    errorElement: document.getElementById('emailError'),
+                    validators: ['required', 'email']
+                },
+                assunto: {
+                    element: document.getElementById('assunto'),
+                    errorElement: document.getElementById('assuntoError'),
+                    validators: ['required', 'minLength']
+                },
+                mensagem: {
+                    element: document.getElementById('mensagem'),
+                    errorElement: document.getElementById('mensagemError'),
+                    validators: ['required', 'minLength']
+                }
+            };
 
-        telefone: (value) => {
-            if (!value.trim()) return 'Telefone é obrigatório';
-            const cleanPhone = value.replace(/\D/g, '');
-            if (cleanPhone.length < 10 || cleanPhone.length > 11) {
-                return 'Telefone deve ter 10 ou 11 dígitos';
-            }
-            return null;
-        },
-
-        mensagem: (value) => {
-            if (!value.trim()) return 'Mensagem é obrigatória';
-            if (value.trim().length < 10) return 'Mensagem deve ter pelo menos 10 caracteres';
-            if (value.trim().length > 1000) return 'Mensagem muito longa (máximo 1000 caracteres)';
-            return null;
-        }
-    };
-
-    // Função para validar campo individual
-    function validateField(fieldName, value) {
-        const formGroup = document.getElementById(fieldName).closest('.form-group');
-        const errorMessage = formGroup.querySelector('.error-message');
-        const successIcon = formGroup.querySelector('.success-icon');
-        const errorIcon = formGroup.querySelector('.error-icon');
-
-        const error = validators[fieldName] ? validators[fieldName](value) : null;
-
-        // Limpar estados anteriores
-        formGroup.classList.remove('error', 'success');
-        errorMessage.style.display = 'none';
-        successIcon.style.display = 'none';
-        errorIcon.style.display = 'none';
-
-        if (error) {
-            formGroup.classList.add('error');
-            errorMessage.textContent = error;
-            errorMessage.style.display = 'block';
-            errorIcon.style.display = 'block';
-            return false;
-        } else if (value.trim()) {
-            formGroup.classList.add('success');
-            successIcon.style.display = 'block';
-            return true;
+            this.init();
+            this.checkUrlParams();
         }
 
-        return true;
-    }
+        init() {
+            Object.keys(this.fields).forEach(fieldName => {
+                const field = this.fields[fieldName];
 
-    // Função para validar todo o formulário
-    function validateForm() {
-        let isValid = true;
-        const requiredFields = ['nome', 'email', 'telefone', 'mensagem'];
-
-        requiredFields.forEach(fieldName => {
-            const field = document.getElementById(fieldName);
-            const fieldValid = validateField(fieldName, field.value);
-            if (!fieldValid) isValid = false;
-        });
-
-        return isValid;
-    }
-
-    // Adicionar validação em tempo real
-    document.addEventListener('DOMContentLoaded', function() {
-        const fields = ['nome', 'email', 'telefone', 'mensagem'];
-
-        fields.forEach(fieldName => {
-            const field = document.getElementById(fieldName);
-
-            // Validação ao sair do campo
-            field.addEventListener('blur', function() {
-                validateField(fieldName, this.value);
-            });
-
-            // Validação durante a digitação (com delay)
-            let timeout;
-            field.addEventListener('input', function() {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => {
-                    validateField(fieldName, this.value);
-                }, 500);
-            });
-        });
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Validar formulário antes de enviar
-        if (!validateForm()) {
-            // Focar no primeiro campo com erro
-            const firstError = this.querySelector('.form-group.error input, .form-group.error textarea');
-            if (firstError) {
-                firstError.focus();
-                firstError.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
+                field.element.addEventListener('blur', () => {
+                    this.validateField(fieldName);
                 });
+
+                field.element.addEventListener('input', () => {
+                    if (fieldName === 'telefone') {
+                        this.formatPhone(field.element);
+                    }
+
+                    if (field.element.classList.contains('invalid')) {
+                        this.validateField(fieldName);
+                    }
+                });
+            });
+
+            this.form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.handleSubmit();
+            });
+        }
+
+        validateField(fieldName) {
+            const field = this.fields[fieldName];
+            const value = field.element.value.trim();
+            let isValid = true;
+            let errorMessage = '';
+
+            field.element.classList.remove('valid', 'invalid');
+            field.errorElement.classList.remove('show');
+
+            for (const validator of field.validators) {
+                const result = this.runValidator(validator, value, fieldName);
+                if (!result.valid) {
+                    isValid = false;
+                    errorMessage = result.message;
+                    break;
+                }
             }
-            return;
+
+            if (isValid && value !== '') {
+                field.element.classList.add('valid');
+            } else if (!isValid) {
+                field.element.classList.add('invalid');
+                field.errorElement.textContent = errorMessage;
+                field.errorElement.classList.add('show');
+            }
+
+            return isValid;
         }
 
-        // Elementos do botão
-        const submitBtn = this.querySelector('.submit-btn');
-        const btnText = submitBtn.querySelector('.btn-text');
-        const loading = submitBtn.querySelector('.loading');
-        const icon = submitBtn.querySelector('.whatsapp-icon');
+        runValidator(validator, value, fieldName) {
+            switch (validator) {
+                case 'required':
+                    return {
+                        valid: value !== '',
+                            message: 'Este campo é obrigatório.'
+                    };
 
-        // Mostrar loading
-        btnText.textContent = 'Enviando...';
-        loading.style.display = 'block';
-        icon.style.display = 'none';
-        submitBtn.disabled = true;
+                case 'minLength':
+                    const minLength = fieldName === 'mensagem' ? 10 : 2;
+                    return {
+                        valid: value.length >= minLength,
+                            message: `Deve ter pelo menos ${minLength} caracteres.`
+                    };
 
-        // Coletar dados do formulário
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
-        const assunto = document.getElementById('assunto').value;
-        const mensagem = document.getElementById('mensagem').value;
+                case 'maxLength':
+                    return {
+                        valid: value.length <= 100,
+                            message: 'Deve ter no máximo 100 caracteres.'
+                    };
 
-        // Criar mensagem para WhatsApp
-        let whatsappMessage = `*Nova mensagem de contato*\n\n`;
-        whatsappMessage += `*Nome:* ${nome}\n`;
-        whatsappMessage += `*E-mail:* ${email}\n`;
-        whatsappMessage += `*Telefone:* ${telefone}\n`;
-        if (assunto) {
-            whatsappMessage += `*Assunto:* ${assunto}\n`;
-        }
-        whatsappMessage += `*Mensagem:* ${mensagem}`;
+                case 'nameFormat':
+                    const nameRegex = /^[a-zA-ZÀ-ÿ\s]+$/;
+                    return {
+                        valid: nameRegex.test(value),
+                            message: 'Nome deve conter apenas letras e espaços.'
+                    };
 
-        // Simular delay de envio
-        setTimeout(() => {
-            // Número do WhatsApp (substitua pelo seu número)
-            // Formato: código do país + DDD + número (sem espaços, traços ou parênteses)
-            const whatsappNumber = '5511999999999'; // Exemplo: +55 11 99999-9999
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return {
+                        valid: emailRegex.test(value),
+                            message: 'Digite um e-mail válido.'
+                    };
 
-            // Codificar mensagem para URL
-            const encodedMessage = encodeURIComponent(whatsappMessage);
+                case 'phone':
+                    const cleanPhone = value.replace(/\D/g, '');
+                    return {
+                        valid: cleanPhone.length >= 10 && cleanPhone.length <= 11,
+                            message: 'Digite um telefone válido.'
+                    };
 
-            // Criar URL do WhatsApp
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-            // Abrir WhatsApp
-            window.open(whatsappURL, '_blank');
-
-            // Resetar botão
-            btnText.textContent = 'Enviar via WhatsApp';
-            loading.style.display = 'none';
-            icon.style.display = 'block';
-            submitBtn.disabled = false;
-
-            // Opcional: limpar formulário após sucesso
-            // this.reset();
-            // Limpar estados de validação
-            // this.querySelectorAll('.form-group').forEach(group => {
-            //     group.classList.remove('error', 'success');
-            //     group.querySelector('.error-message').style.display = 'none';
-            //     group.querySelector('.success-icon').style.display = 'none';
-            //     group.querySelector('.error-icon').style.display = 'none';
-            // });
-
-        }, 1500);
-    });
-
-    // Máscara para telefone
-    document.getElementById('telefone').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-
-        if (value.length <= 11) {
-            value = value.replace(/(\d{2})(\d)/, '($1) $2');
-            value = value.replace(/(\d{4,5})(\d{4})/, '$1-$2');
+                default:
+                    return {
+                        valid: true, message: ''
+                    };
+            }
         }
 
-        e.target.value = value;
+        formatPhone(input) {
+            let value = input.value.replace(/\D/g, '');
+
+            if (value.length <= 11) {
+                if (value.length <= 2) {
+                    value = value.replace(/(\d{0,2})/, '($1');
+                } else if (value.length <= 6) {
+                    value = value.replace(/(\d{2})(\d{0,4})/, '($1) $2');
+                } else if (value.length <= 10) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                }
+            }
+
+            input.value = value;
+        }
+
+        validateAllFields() {
+            let isFormValid = true;
+
+            Object.keys(this.fields).forEach(fieldName => {
+                const isFieldValid = this.validateField(fieldName);
+                if (!isFieldValid) {
+                    isFormValid = false;
+                }
+            });
+
+            return isFormValid;
+        }
+
+        async handleSubmit() {
+            if (!this.validateAllFields()) {
+                this.showMessage('Por favor, corrija os erros no formulário.', 'error');
+                return;
+            }
+
+            this.submitBtn.classList.add('submitting');
+            this.submitBtn.disabled = true;
+
+            try {
+                await this.simulateSubmit();
+                this.showMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+                this.form.reset();
+                this.resetFieldsState();
+
+            } catch (error) {
+                this.showMessage('Erro ao enviar a mensagem. Tente novamente.', 'error');
+            } finally {
+                this.submitBtn.classList.remove('submitting');
+                this.submitBtn.disabled = false;
+            }
+        }
+
+        async simulateSubmit() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (Math.random() > 0.1) {
+                        resolve();
+                    } else {
+                        reject(new Error('Erro simulado'));
+                    }
+                }, 2000);
+            });
+        }
+
+        resetFieldsState() {
+            Object.keys(this.fields).forEach(fieldName => {
+                const field = this.fields[fieldName];
+                field.element.classList.remove('valid', 'invalid');
+                field.errorElement.classList.remove('show');
+            });
+        }
+
+        showMessage(message, type) {
+            this.messageContainer.innerHTML = `
+          <div class="message ${type}">
+            ${message}
+          </div>
+        `;
+
+            setTimeout(() => {
+                this.messageContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+
+            if (status === 'success') {
+                this.showMessage('Mensagem enviada com sucesso!', 'success');
+            } else if (status === 'error') {
+                this.showMessage('Erro ao enviar a mensagem.', 'error');
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new ContactFormValidator();
     });
 </script>
-
 
 </html>
