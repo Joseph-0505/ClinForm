@@ -15,6 +15,7 @@
      justify-content: flex-start;
      margin-top: 100px;
      position: relative;
+     margin-left: 50px;
  }
 
  .info-section::before {
@@ -86,19 +87,19 @@
      padding: 15px 40px;
      margin-top: 60px;
      margin-bottom: 60px;
-     max-width: 480px;
-     margin-right: 50px;
+     max-width: 500px;
+     border-radius: 30px;
+     margin-left: 50px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      position: relative;
-     border-radius: 50px;
      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
  }
 
  .form-header {
      text-align: center;
-     margin-bottom: 15px;
+     margin-top: 20px;
  }
 
  .form-title {
@@ -106,10 +107,6 @@
      font-weight: 600;
      color: #1a4a5c;
      margin-bottom: 5px;
- }
-
- .form-group {
-     margin-bottom: 15px;
  }
 
  .form-subtitle {
@@ -161,9 +158,69 @@
  }
 
  .form-group {
-     margin-bottom: 25px;
      position: relative;
+     margin-bottom: 1.5rem;
  }
+
+ .form-group input,
+ .form-group textarea {
+     width: 100%;
+     padding: 1.2rem 0.8rem 0.5rem;
+     font-size: 1rem;
+     border: 2px solid #ccc;
+     border-radius: 8px;
+     background-color: #fff;
+     transition: border-color 0.3s ease;
+ }
+
+ .form-group input:focus,
+ .form-group textarea:focus {
+     outline: none;
+     border-color: #12653E;
+ }
+
+ .form-group label {
+     position: absolute;
+     left: 0.8rem;
+     top: 1rem;
+     font-size: 1rem;
+     color: #666;
+     background: #fff;
+     padding: 0 0.3rem;
+     transition: all 0.3s ease;
+     pointer-events: none;
+ }
+
+ /* Flutua o label ao focar ou preencher */
+ .form-group input:focus+label,
+ .form-group input:not(:placeholder-shown)+label,
+ .form-group textarea:focus+label,
+ .form-group textarea:not(:placeholder-shown)+label {
+     top: -0.6rem;
+     left: 0.6rem;
+     font-size: 0.75rem;
+     color: #12653E;
+ }
+
+ /* Estilo de erro */
+ .form-group input.invalid,
+ .form-group textarea.invalid {
+     background-color: #ffecec;
+     border-color: red;
+ }
+
+ .error-message {
+     color: red;
+     font-size: 0.75rem;
+     margin-top: 0.25rem;
+     display: none;
+ }
+
+ .error-message.show {
+     display: block;
+ }
+
+
 
  label {
      display: block;
@@ -217,17 +274,7 @@
      font-family: inherit;
  }
 
- .error-message {
-     color: #ef4444;
-     font-size: 0.85rem;
-     margin-top: 5px;
-     display: none;
-     animation: fadeIn 0.3s ease-in;
- }
 
- .error-message.show {
-     display: block;
- }
 
  @keyframes fadeIn {
      from {
@@ -243,21 +290,7 @@
      position: relative;
  }
 
- .phone-input::before {
-     content: '+55';
-     position: absolute;
-     left: 18px;
-     top: 50%;
-     transform: translateY(-50%);
-     color: #666;
-     font-size: 16px;
-     pointer-events: none;
-     z-index: 1;
- }
 
- .phone-input input {
-     padding-left: 55px;
- }
 
  .submit-btn {
      width: 100%;
@@ -327,50 +360,67 @@
      opacity: 0;
  }
 
- /* Responsividade */
- @media (max-width: 1024px) {
-     .container {
-         grid-template-columns: 1fr;
-     }
-
-     .info-section {
-         padding: 40px 30px;
-         text-align: center;
-     }
-
-     .form-section {
-         border-radius: 30px 30px 0 0;
-         padding: 40px 30px;
-     }
-
-     .main-title {
-         font-size: 2.8rem;
-     }
- }
 
  @media (max-width: 768px) {
 
-     .info-section,
+     /* Container principal - muda de grid para layout vertical */
+     .contato-container {
+         grid-template-columns: 1fr;
+         grid-template-rows: auto auto;
+         min-height: auto;
+     }
+
+     /* Seção de informações */
+     .info-section {
+         padding: 40px 20px 20px 20px;
+         margin-top: 20px;
+         order: 1;
+     }
+
+     /* Remove o círculo decorativo em mobile */
+     .info-section::before {
+         display: none;
+     }
+
+     /* Seção do formulário */
      .form-section {
-         padding: 30px 20px;
+         padding: 20px;
+         margin: 20px;
+         margin-top: 0;
+         margin-right: 20px;
+         max-width: none;
+         order: 2;
+         border-radius: 20px;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
      }
 
      .main-title {
          font-size: 2.2rem;
+         text-align: center;
+         margin-bottom: 20px;
+     }
+
+     .subtitle {
+         font-size: 1rem;
+         text-align: center;
+         margin-bottom: 30px;
      }
 
      .form-title {
-         font-size: 1.6rem;
+         font-size: 1.4rem;
      }
 
      .contact-info {
          gap: 25px;
+         text-align: center;
      }
 
      .contact-value {
          font-size: 1.1rem;
      }
 
+     .form-group input,
+     .form-group textarea,
      input,
      textarea {
          padding: 12px 15px;
@@ -381,26 +431,15 @@
      .phone-input input {
          padding-left: 50px;
      }
- }
 
- @media (max-width: 480px) {
-     .main-title {
-         font-size: 1.8rem;
-     }
-
-     .form-section {
-         border-radius: 20px 20px 0 0;
+     /* Ajusta o botão para mobile */
+     .submit-btn {
+         padding: 16px;
+         font-size: 1.1rem;
      }
  }
 
- /* Animações de entrada */
- .info-section {
-     animation: slideInLeft 0.8s ease-out;
- }
 
- .form-section {
-     animation: slideInRight 0.8s ease-out;
- }
 
  @keyframes slideInLeft {
      from {

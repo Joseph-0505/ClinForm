@@ -50,40 +50,40 @@
 
         <form id="contactForm" action="/clinform/enviar-email.php" method="POST" novalidate>
             <div class="form-group">
-                <label for="nome"><span class="required"></span></label>
-                <input type="text" name="nome" placeholder="Nome" id="nome" required>
+                <input type="text" name="nome" id="nome" required placeholder=" ">
+                <label for="nome">Nome<span class="required"></span></label>
                 <div class="error-message" id="nomeError"></div>
             </div>
 
             <div class="form-group">
-                <label for="empresa"> <span class="required"></span></label>
-                <input type="text" name="empresa" placeholder="Empresa" id="empresa" required>
+                <input type="text" name="empresa" id="empresa" required placeholder=" ">
+                <label for="empresa">Empresa<span class="required"></span></label>
                 <div class="error-message" id="empresaError"></div>
             </div>
 
             <div class="form-group">
-                <label for="telefone"> <span class="required"></span></label>
                 <div class="phone-input">
-                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" placeholder="(00) 00000-0000" required>
+                    <input type="tel" name="telefone" id="telefone" required placeholder=" ">
+                    <label for="telefone">Telefone<span class="required"></span></label>
                 </div>
                 <div class="error-message" id="telefoneError"></div>
             </div>
 
             <div class="form-group">
-                <label for="email"> <span class="required"></span></label>
-                <input type="email" name="email" placeholder="Email" id="email" required>
+                <input type="email" name="email" id="email" required placeholder=" ">
+                <label for="email">Email<span class="required"></span></label>
                 <div class="error-message" id="emailError"></div>
             </div>
 
             <div class="form-group">
-                <label for="assunto"> <span class="required"></span></label>
-                <input type="text" name="assunto" placeholder="Assunto" id="assunto" required>
+                <input type="text" name="assunto" id="assunto" required placeholder=" ">
+                <label for="assunto">Assunto<span class="required"></span></label>
                 <div class="error-message" id="assuntoError"></div>
             </div>
 
             <div class="form-group">
-                <label for="mensagem"><span class="required"></span></label>
-                <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                <textarea name="mensagem" id="mensagem" rows="5" required placeholder=" "></textarea>
+                <label for="mensagem">Digite sua mensagem aqui...<span class="required"></span></label>
                 <div class="error-message" id="mensagemError"></div>
             </div>
 
@@ -93,6 +93,7 @@
             </button>
         </form>
     </div>
+</div>
 </div>
 
 <script>
@@ -105,33 +106,27 @@
             this.fields = {
                 nome: {
                     element: document.getElementById('nome'),
-                    errorElement: document.getElementById('nomeError'),
-                    validators: ['required', 'minLength', 'nameFormat']
+                    errorElement: document.getElementById('nomeError')
                 },
                 empresa: {
                     element: document.getElementById('empresa'),
-                    errorElement: document.getElementById('empresaError'),
-                    validators: ['required', 'maxLength']
+                    errorElement: document.getElementById('empresaError')
                 },
                 telefone: {
                     element: document.getElementById('telefone'),
-                    errorElement: document.getElementById('telefoneError'),
-                    validators: ['required', 'phone']
+                    errorElement: document.getElementById('telefoneError')
                 },
                 email: {
                     element: document.getElementById('email'),
-                    errorElement: document.getElementById('emailError'),
-                    validators: ['required', 'email']
+                    errorElement: document.getElementById('emailError')
                 },
                 assunto: {
                     element: document.getElementById('assunto'),
-                    errorElement: document.getElementById('assuntoError'),
-                    validators: ['required', 'minLength']
+                    errorElement: document.getElementById('assuntoError')
                 },
                 mensagem: {
                     element: document.getElementById('mensagem'),
-                    errorElement: document.getElementById('mensagemError'),
-                    validators: ['required', 'minLength']
+                    errorElement: document.getElementById('mensagemError')
                 }
             };
 
@@ -148,10 +143,6 @@
                 });
 
                 field.element.addEventListener('input', () => {
-                    if (fieldName === 'telefone') {
-                        this.formatPhone(field.element);
-                    }
-
                     if (field.element.classList.contains('invalid')) {
                         this.validateField(fieldName);
                     }
@@ -167,97 +158,20 @@
         validateField(fieldName) {
             const field = this.fields[fieldName];
             const value = field.element.value.trim();
-            let isValid = true;
-            let errorMessage = '';
 
             field.element.classList.remove('valid', 'invalid');
             field.errorElement.classList.remove('show');
 
-            for (const validator of field.validators) {
-                const result = this.runValidator(validator, value, fieldName);
-                if (!result.valid) {
-                    isValid = false;
-                    errorMessage = result.message;
-                    break;
-                }
-            }
-
-            if (isValid && value !== '') {
-                field.element.classList.add('valid');
-            } else if (!isValid) {
+            // Apenas validação de campo obrigatório
+            if (value === '') {
                 field.element.classList.add('invalid');
-                field.errorElement.textContent = errorMessage;
+                field.errorElement.textContent = 'Este campo é obrigatório.';
                 field.errorElement.classList.add('show');
+                return false;
+            } else {
+                field.element.classList.add('valid');
+                return true;
             }
-
-            return isValid;
-        }
-
-        runValidator(validator, value, fieldName) {
-            switch (validator) {
-                case 'required':
-                    return {
-                        valid: value !== '',
-                            message: 'Este campo é obrigatório.'
-                    };
-
-                case 'minLength':
-                    const minLength = fieldName === 'mensagem' ? 10 : 2;
-                    return {
-                        valid: value.length >= minLength,
-                            message: `Deve ter pelo menos ${minLength} caracteres.`
-                    };
-
-                case 'maxLength':
-                    return {
-                        valid: value.length <= 100,
-                            message: 'Deve ter no máximo 100 caracteres.'
-                    };
-
-                case 'nameFormat':
-                    const nameRegex = /^[a-zA-ZÀ-ÿ\s]+$/;
-                    return {
-                        valid: nameRegex.test(value),
-                            message: 'Nome deve conter apenas letras e espaços.'
-                    };
-
-                case 'email':
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return {
-                        valid: emailRegex.test(value),
-                            message: 'Digite um e-mail válido.'
-                    };
-
-                case 'phone':
-                    const cleanPhone = value.replace(/\D/g, '');
-                    return {
-                        valid: cleanPhone.length >= 10 && cleanPhone.length <= 11,
-                            message: 'Digite um telefone válido.'
-                    };
-
-                default:
-                    return {
-                        valid: true, message: ''
-                    };
-            }
-        }
-
-        formatPhone(input) {
-            let value = input.value.replace(/\D/g, '');
-
-            if (value.length <= 11) {
-                if (value.length <= 2) {
-                    value = value.replace(/(\d{0,2})/, '($1');
-                } else if (value.length <= 6) {
-                    value = value.replace(/(\d{2})(\d{0,4})/, '($1) $2');
-                } else if (value.length <= 10) {
-                    value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-                } else {
-                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-                }
-            }
-
-            input.value = value;
         }
 
         validateAllFields() {
@@ -275,7 +189,7 @@
 
         async handleSubmit() {
             if (!this.validateAllFields()) {
-                this.showMessage('Por favor, corrija os erros no formulário.', 'error');
+                this.showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
                 return;
             }
 
