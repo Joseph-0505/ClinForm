@@ -238,79 +238,10 @@
          </div>
 
 
-         <div class="hero-visual">
-             <div class="mockup-container">
-                 <div class="mockup">
-                     <div class="mockup-header">
-                         <div class="window-controls">
-                             <div class="mockup-dot dot-red"></div>
-                             <div class="mockup-dot dot-yellow"></div>
-                             <div class="mockup-dot dot-green"></div>
-                         </div>
-                         <div class="window-title">ClinForm Dashboard</div>
-                     </div>
-                     <div class="mockup-content">
-                         <div class="mockup-title">
-                             <div class="title-icon">📋</div>
-                             Anamnese Cardiológica
-                         </div>
-                         <div class="mockup-tabs">
-                             <div class="mockup-tab active">
-                                 <div class="mockup-icon"></div>
-                                 Formulário
-                             </div>
-                             <div class="mockup-tab">
-                                 <div class="mockup-icon"></div>
-                                 Análise
-                             </div>
-                         </div>
-                         <div class="mockup-form">
-                             <div class="mockup-field">
-                                 <div class="mockup-label">
-                                     <div class="field-status"></div>
-                                     Histórico familiar completo
-                                 </div>
-                                 <div class="mockup-progress">
-                                     <div class="mockup-progress-fill" style="width: 85%"></div>
-                                 </div>
-                             </div>
-                             <div class="mockup-field">
-                                 <div class="mockup-label">
-                                     <div class="field-status"></div>
-                                     Exames complementares
-                                 </div>
-                                 <div class="mockup-progress">
-                                     <div class="mockup-progress-fill" style="width: 72%"></div>
-                                 </div>
-                             </div>
-                             <div class="mockup-field">
-                                 <div class="mockup-label">
-                                     <div class="field-status"></div>
-                                     Fatores de risco
-                                 </div>
-                                 <div class="mockup-progress">
-                                     <div class="mockup-progress-fill" style="width: 93%"></div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="stats-preview">
-                             <div class="stat">
-                                 <div class="stat-number">12</div>
-                                 <div class="stat-label">Campos</div>
-                             </div>
-                             <div class="stat">
-                                 <div class="stat-number">4m</div>
-                                 <div class="stat-label">Tempo</div>
-                             </div>
-                             <div class="stat">
-                                 <div class="stat-number">98%</div>
-                                 <div class="stat-label">Completo</div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+         <div class="mockup-device">
+             <img src="/clinform/sistema-anamnese/clinform/public/images/notebook.png" alt="Notebook ClinForm" class="mockup-img">
          </div>
+
      </div>
  </div>
 
