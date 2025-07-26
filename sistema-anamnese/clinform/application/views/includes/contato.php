@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/clinform/sistema-anamnese/clinform/public/css/contato/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Contato - ClinForm</title>
 </head>
 
 <body>

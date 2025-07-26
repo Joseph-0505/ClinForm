@@ -1,0 +1,98 @@
+ /*------------------Seção Doutor com notebook------------------*/
+ body {
+     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+ }
+
+ .doctor-hero {
+     padding: 80px 0;
+     min-height: 600px;
+     display: flex;
+     align-items: center;
+ }
+
+ .doctor-content {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 60px;
+     align-items: center;
+ }
+
+ .doctor-text h1 {
+     font-size: 3.5rem;
+     font-weight: 700;
+     color: #0d7377;
+     margin-bottom: 30px;
+     line-height: 1.2;
+ }
+
+ .doctor-text p {
+     font-size: 1.2rem;
+     color: #6b7280;
+     margin-bottom: 40px;
+     line-height: 1.6;
+ }
+
+ .doctor-image {
+     text-align: center;
+ }
+
+ .doctor-image img {
+     width: 100%;
+     max-width: 800px;
+     height: auto;
+     border-radius: 50px;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+ }
+
+ /*------------------Secção valores------------------------------*/
+ .features-doctor {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     justify-content: center;
+     text-align: center;
+ }
+
+ .feature-doctor {
+     flex: 1 1 200px;
+     padding: 20px;
+
+ }
+
+ .feature-doctor i {
+     font-size: 2rem;
+     color: #0d7377;
+     margin-bottom: 10px;
+ }
+
+ .feature-doctor p {
+     font-size: 20px;
+     color: #6b7280;
+     margin-top: 10px;
+ }
+
+ @media(max-width: 768px) {
+     .doctor-content {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .mvv-grid {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .doctor-text h1 {
+         font-size: 2.5rem;
+         text-align: center;
+     }
+
+     .doctor-text p {
+         text-align: center;
+     }
+
+     .features-doctor {
+         grid-template-columns: 1fr;
+         gap: 100px;
+     }
+ }
