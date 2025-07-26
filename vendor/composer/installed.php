@@ -1,20 +1,20 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'clinform/sistema-anamnese',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'd98fc357ac35de65b6edb550f264ab1e4cf4015a',
-        'type' => 'library',
+        'reference' => '465d8231a65c9c6f092211bf67101af3222a0e52',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'clinform/sistema-anamnese' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'd98fc357ac35de65b6edb550f264ab1e4cf4015a',
-            'type' => 'library',
+            'reference' => '465d8231a65c9c6f092211bf67101af3222a0e52',
+            'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
