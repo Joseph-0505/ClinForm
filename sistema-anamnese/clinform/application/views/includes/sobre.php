@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="testimonial-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect fill='%23667eea' width='300' height='250' rx='15'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23fff' opacity='0.9'/%3E%3Crect x='120' y='160' width='60' height='6' rx='3' fill='%23fff' opacity='0.7'/%3E%3Crect x='130' y='180' width='40' height='4' rx='2' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" alt="Dr. Ricardo Santos">
+                    <img src="/clinform/sistema-anamnese/clinform/public/images/doutor1.jpg" alt="Dr. Ricardo Santos">
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="testimonial-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect fill='%23764ba2' width='300' height='250' rx='15'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23fff' opacity='0.9'/%3E%3Crect x='120' y='160' width='60' height='6' rx='3' fill='%23fff' opacity='0.7'/%3E%3Crect x='130' y='180' width='40' height='4' rx='2' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" alt="Dra. Maria Fernanda">
+                    <img src="/clinform/sistema-anamnese/clinform/public/images/doutor2.jpg" alt="Dra. Maria Fernanda">
                 </div>
             </div>
 
@@ -137,10 +137,10 @@
                 <div class="testimonial-content">
                     <p class="testimonial-text">A segurança dos dados dos meus pacientes sempre foi minha maior preocupação. Com a ClinForm, tenho a tranquilidade de saber que tudo está protegido e em conformidade com a LGPD.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AL</div>
+                        <div class="author-avatar">VC</div>
                         <div class="author-info">
-                            <h4>Dr. André Lima</h4>
-                            <p>Psicólogo - Belo Horizonte</p>
+                            <h4>Dra. Vanessa Castro</h4>
+                            <p>Psicóloga - Belo Horizonte</p>
                             <div class="rating">
                                 <span class="star">★</span>
                                 <span class="star">★</span>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="testimonial-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect fill='%2318a085' width='300' height='250' rx='15'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23fff' opacity='0.9'/%3E%3Crect x='120' y='160' width='60' height='6' rx='3' fill='%23fff' opacity='0.7'/%3E%3Crect x='130' y='180' width='40' height='4' rx='2' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" alt="Dr. André Lima">
+                    <img src="/clinform/sistema-anamnese/clinform/public/images/doutora3.jpg" alt="Dra. Vanessa Castro">
                 </div>
             </div>
 
@@ -177,7 +177,7 @@
                     </div>
                 </div>
                 <div class="testimonial-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect fill='%23e74c3c' width='300' height='250' rx='15'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23fff' opacity='0.9'/%3E%3Crect x='120' y='160' width='60' height='6' rx='3' fill='%23fff' opacity='0.7'/%3E%3Crect x='130' y='180' width='40' height='4' rx='2' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" alt="Dra. Julia Silva">
+                    <img src="/clinform/sistema-anamnese/clinform/public/images/doutora4.avif" alt="Dra. Julia Silva">
                 </div>
             </div>
 
@@ -187,9 +187,9 @@
                 <div class="testimonial-content">
                     <p class="testimonial-text">O que mais me impressiona na ClinForm é a facilidade de uso. Mesmo não sendo muito técnico, consegui implementar o sistema rapidamente e meus pacientes adoraram a modernização.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">CF</div>
+                        <div class="author-avatar">AC</div>
                         <div class="author-info">
-                            <h4>Dr. Carlos Ferreira</h4>
+                            <h4>Dra. Andressa Cardoso </h4>
                             <p>Dermatologista - Brasília</p>
                             <div class="rating">
                                 <span class="star">★</span>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 <div class="testimonial-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect fill='%23f39c12' width='300' height='250' rx='15'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23fff' opacity='0.9'/%3E%3Crect x='120' y='160' width='60' height='6' rx='3' fill='%23fff' opacity='0.7'/%3E%3Crect x='130' y='180' width='40' height='4' rx='2' fill='%23fff' opacity='0.5'/%3E%3C/svg%3E" alt="Dr. Carlos Ferreira">
+                    <img src="/clinform/sistema-anamnese/clinform/public/images/doutora5.avif" alt="Dra. Andressa Cardoso">
                 </div>
             </div>
         </div>
