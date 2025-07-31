@@ -214,6 +214,40 @@
         <button class="nav-btn" id="nextBtn">›</button>
     </div>
 </div>
+<!----------------------------------------------------Secao CTA-------------------------------------------------------->
+
+
+<!-- CTA Simples -->
+<div class="simple-cta">
+    <h3 class="cta-title">Pronto para transformar seu atendimento?</h3>
+    <p class="cta-subtitle">
+        Comece agora mesmo e descubra como a ClinForm pode otimizar seu tempo e melhorar seu atendimento.
+    </p>
+
+    <a href="<?= BASE_URL ?>contato" class="primary-btn">Quero conhecer
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </a>
+
+
+
+    <div class="trust-indicators">
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span>Entre em contato para mais informações</span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span>Sem cartão de crédito</span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span>Suporte incluído</span>
+        </div>
+    </div>
+</div>
+</div>
 
 <script>
     class TestimonialCarousel {
