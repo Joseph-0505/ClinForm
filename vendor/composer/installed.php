@@ -3,7 +3,7 @@
         'name' => 'clinform/sistema-anamnese',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '465d8231a65c9c6f092211bf67101af3222a0e52',
+        'reference' => 'da65c3da75ed8567c3dc145c99f5e1d2541c00ce',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'clinform/sistema-anamnese' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '465d8231a65c9c6f092211bf67101af3222a0e52',
+            'reference' => 'da65c3da75ed8567c3dc145c99f5e1d2541c00ce',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

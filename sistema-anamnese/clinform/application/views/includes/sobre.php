@@ -248,7 +248,7 @@
     </div>
 </div>
 </div>
-
+<?php include __DIR__ . '/../includes/whatsapp.php'; ?>
 <script>
     class TestimonialCarousel {
         constructor() {

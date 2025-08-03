@@ -3,7 +3,7 @@
     "description": "Sistema de Anamnese ClinForm",
     "type": "project",
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.10"
     },
     "autoload": {
         "psr-4": {

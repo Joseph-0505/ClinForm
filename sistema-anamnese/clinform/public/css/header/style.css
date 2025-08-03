@@ -25,7 +25,7 @@
 
    .nav-link i {
        margin: 5px;
-       ;
+
    }
 
    .nav-link {
@@ -214,12 +214,12 @@
            margin-left: 20px;
        }
 
-
-
        .navbar-toggler {
            border: 2px solid #0d7377 !important;
            border-radius: 10px !important;
        }
+
+
 
        .mobile-menu {
            width: 100%;
@@ -234,4 +234,6 @@
        .btn-primary {
            margin-right: 20px !important;
        }
+
+
    }

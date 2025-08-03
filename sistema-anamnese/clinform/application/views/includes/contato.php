@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -22,14 +23,17 @@
                 <div class="contact-item">
                     <span class="contact-label">WhatsApp Comercial:</span>
                     <span class="contact-value">
-                        <a href="https://wa.me/5541987714503" target="_blank">(41) 98771-4503</a>
+                        <a href="https://wa.me/5541997178938" target="_blank">(44) 99717-8938</a>
+                    </span>
+                    <span class="contact-value">
+                        <a href="https://wa.me/5544999506302" target="_blank">(44) 99950-6302</a>
                     </span>
                 </div>
 
                 <div class="contact-item">
                     <span class="contact-label">E-mail:</span>
                     <span class="contact-value">
-                        <a href="mailto:suporte@egssistemas.com">suporte@egssistemas.com</a>
+                        <a href="mailto:suporte@clinform.com">suporte@clinform.com</a>
                     </span>
                 </div>
             </div>
@@ -93,6 +97,8 @@
             </form>
         </div>
     </div>
+    <?php include __DIR__ . '/../includes/whatsapp.php'; ?>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
