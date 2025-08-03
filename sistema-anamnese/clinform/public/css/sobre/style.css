@@ -414,10 +414,38 @@
      }
 
      .laptop-mockup img {
-         max-width: 500px;
+         max-width: 100%;
      }
 
      .feature-item {
          text-align: center;
+     }
+
+     .testimonials-section {
+         margin: 15px !important;
+         max-width: 450px;
+     }
+
+     .testimonial-card {
+         flex-direction: column;
+         text-align: center;
+         padding: 30px 20px;
+     }
+
+     .doctor-images {
+         width: 150px;
+         height: 150px;
+     }
+
+     .section-title {
+         font-size: 2.2rem;
+     }
+
+     .features-title {
+         font-size: 2rem;
+     }
+
+     .features-grid {
+         grid-template-columns: 1fr;
      }
  }

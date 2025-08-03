@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i>Home</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>sobre"><i class="fas fa-info-circle"></i>Sobre</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>sobre"><i class="fas fa-info-circle"></i> Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>contato"><i class="fas fa-envelope"></i>Contato</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>contato"><i class="fas fa-envelope"></i> Contato</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -64,9 +64,9 @@
             </button>
         </div>
         <div class="mobile-menu-content">
-            <a class="nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i>Home</a>
-            <a href="sobre.php" class="mobile-nav-link"><i class="fas fa-info-circle"></i>Sobre</a>
-            <a href="contato.php" class="mobile-nav-link"><i class="fas fa-envelope"></i>Contato</a>
-            <button class="mobile-cta-button">Façe seu orçamento</button>
+            <a class="mobile-nav-link" href="<?= BASE_URL ?>home"><i class="fas fa-home"></i> Home</a>
+            <a class="mobile-nav-link" href="<?= BASE_URL ?>sobre"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a class="mobile-nav-link" href="<?= BASE_URL ?>contato"><i class="fas fa-envelope"></i> Contato</a>
+            <button class="btn btn-primary">Entre no sistema<i aria-hidden="true" class="fas fa-sign-in-alt"></i></button>
         </div>
 </header>

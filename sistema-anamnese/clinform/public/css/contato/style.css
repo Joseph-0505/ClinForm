@@ -373,6 +373,7 @@
      .info-section {
          padding: 40px 20px 20px 20px;
          margin-top: 20px;
+         margin: 10px !important;
          order: 1;
      }
 
